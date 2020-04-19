@@ -95,7 +95,6 @@ function drawStarData(starPosition) {
     fill: boxColor.fill
   };
 
-  // why is not persistent??
   drawStarSelectionIndicator(star.x - galaxyOffset.x, star.y - galaxyOffset.y);
 
   drawDialog(box);
