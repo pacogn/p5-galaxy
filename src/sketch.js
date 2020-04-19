@@ -8,9 +8,9 @@ let fps = true;
 
 let terminalFont;
 
-function preload() {
-  terminalFont = loadFont('./assets/Inconsolata.otf');
-}
+// function preload() {
+//   terminalFont = loadFont('./assets/Inconsolata.otf');
+// }
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
@@ -23,7 +23,7 @@ function setup() {
   starSelected = false;
   mouse = createVector(0, 0);
 
-  textFont(terminalFont);
+  // textFont(terminalFont);
 }
 
 function mousePressed() {
