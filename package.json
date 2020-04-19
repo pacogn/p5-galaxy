@@ -1,0 +1,9 @@
+{
+  "name": "galaxy",
+  "version": "1.0.0",
+  "main": "sketch.js",
+  "scripts": {
+    "start": "live-server src/"
+  },
+  "devDependencies": {}
+}
