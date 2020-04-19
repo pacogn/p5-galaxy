@@ -15,15 +15,15 @@ class StarSystem {
     if (!generateFullSystem) return;
 
     this.isFullSystem = true;
-    this.distanceFromStar = this.rnd.flt(60.0, 200.0);
+    this.distanceFromStar = this.rnd.flt(6.0, 20.0);
     this.nPlanets = this.rnd.int(0, 10);
     this.planets = [];
 
     for (let i = 0; i < this.nPlanets; i++) {
       this.planets.push({
-        distance: this.distanceFromStar + this.rnd.flt(20.0, 200.0),
+        distance: this.distanceFromStar + this.rnd.flt(2.0, 50.0),
         diameter: this.rnd.flt(4.0, 20.0),
-        type: planetTypes[Math.max(this.rnd.int(-10, 3), 0)]
+        type: planetTypes[Math.max(this.rnd.int(0, 3), 0)]
       });
     }
   }

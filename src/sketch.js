@@ -91,7 +91,7 @@ function drawStarData(starPosition) {
   const box = {
     padding: 30,
     height: 150,
-    stroke: 'white',
+    stroke: '#E8E8E8',
     fill: boxColor.fill
   };
 
@@ -105,15 +105,21 @@ function drawStarData(starPosition) {
 
   fill(star.color)
     .stroke('#E8E8E8')
-    .strokeWeight(1);
+    .strokeWeight(2);
 
-  // TODO: the fact that the circle is not aligned on the center
-  // is driving me crazy. Just take a breath and think how to align
-  // them.
-  const posX = box.padding * 2 + star.diameter * 1.375;
-  const posY = height - 10 - box.height / 2 - (star.diameter * 1.375) / 2;
+  let posX = (box.padding << 1) + star.diameter;
+  let posY = height - (box.height >>> 1) - box.padding;
 
-  circle(posX, posY, star.diameter);
+  circle(posX, posY, star.diameter << 1);
+
+  posX += star.diameter;
+
+  star.planets.forEach(planet => {
+    posX += planet.distance;
+    fill(planet.type.palette[0]).strokeWeight(1);
+    circle(posX, posY, planet.diameter << 1);
+    posX += planet.diameter;
+  });
 }
 
 function keyPressed() {}
